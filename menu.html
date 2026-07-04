@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu | Evening Glow Cafe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Space+Mono:wght@400;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#ff4d1c",            /* Vibrant Orange */
+                    "secondary": "#145348",          /* Dark Teal */
+                    "background": "#fbf9f4",         /* Creamy background */
+                    "on-background": "#1c1816",      /* Charcoal dark text */
+                    "surface": "#fbf9f4",
+                    "surface-container-low": "#f3f0e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1c1816",
+                    "on-surface-variant": "#59524e",
+                    "outline": "#dbc4b6",
+                    "outline-variant": "#e6dcd3",
+                    "primary-fixed": "#ffe4dc",
+                    "secondary-fixed": "#d0e6e2",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Space Mono"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "body-md": ["Work Sans"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-lg": ["Work Sans"],
+                    "display-lg-mobile": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar / Header (Dark Background as in Image) -->
+<header class="flex justify-between items-center px-margin-mobile md:px-16 py-4 w-full z-50 bg-[#1c1816] text-white border-b border-on-background/20 sticky top-0">
+    <div class="flex items-center gap-3">
+        <button id="menu-btn" class="flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none" aria-label="Buka Menu">
+            <span class="material-symbols-outlined text-primary text-2xl">menu</span>
+        </button>
+        <span class="font-headline-md text-xl tracking-tight text-white flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-primary inline-block"></span> Evening Glow
+        </span>
+    </div>
+    <!-- Desktop Nav Links -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-primary transition-colors">Beranda</a>
+        <a href="menu.html" class="text-primary">Menu Utama</a>
+        <a href="gallery.html" class="hover:text-primary transition-colors">Galeri Suasana</a>
+        <a href="contact.html" class="hover:text-primary transition-colors">Lokasi & Kontak</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <a href="contact.html" class="hidden md:inline-block bg-primary text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-primary/90 transition-all shadow-md">Pesan Sekarang</a>
+        <span class="material-symbols-outlined text-primary text-2xl cursor-pointer">shopping_bag</span>
+    </div>
+</header>
+
+<main class="py-12 px-margin-mobile max-w-4xl mx-auto pb-32">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+        <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Katalog Rasa</span>
+        <h2 class="font-headline-md text-3xl text-on-surface mt-2">Daftar Menu Kami</h2>
+        <p class="font-body-md text-on-surface-variant max-w-md mx-auto mt-2 text-sm">Setiap sajian diseduh dan dipanggang dengan hati untuk menemani waktu senja Anda.</p>
+    </div>
+
+    <!-- Category Tabs -->
+    <div class="flex justify-center border-b border-outline-variant mb-10 overflow-x-auto custom-scrollbar">
+        <button class="tab-btn py-3 px-6 font-semibold border-b-2 border-primary text-primary whitespace-nowrap" data-tab="coffee">Coffee</button>
+        <button class="tab-btn py-3 px-6 font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-primary whitespace-nowrap" data-tab="non-coffee">Non-Coffee</button>
+        <button class="tab-btn py-3 px-6 font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-primary whitespace-nowrap" data-tab="pastries">Pastries</button>
+        <button class="tab-btn py-3 px-6 font-semibold border-b-2 border-transparent text-on-surface-variant hover:text-primary whitespace-nowrap" data-tab="meals">Makanan Berat</button>
+    </div>
+
+    <!-- Coffee Content -->
+    <div id="category-coffee" class="tab-content grid gap-8 md:grid-cols-2">
+        <!-- Item 1 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9MLMu3BPOGCgiJfRd6snGK88muVaSfkfIurgbLxLdWTRPv7bMArk9aBp3vtKaQG6UztQuhTe7NxOAC_Y1D0YHBxQC47eSN_RViBvOIiKv30P6N6ZGU1uhalLl4o-y7KAjLwtsYr40a-_SbgmNlV58nIkvmKA6UCbaKMWNv6GGcIqu-lcWgf48BHxC1IBHGOnF92vyQ463tF03KTYkM6CSfEBed_BX_OHqbz_h_8PGUF7j8v9k4LZsicCIVutf5dTDhhpRnuh5aTY" alt="Rustic Latte">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Rustic Latte</h4>
+                        <span class="font-label-sm text-primary font-bold">42K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Perpaduan espresso artisan dengan susu krimi & sentuhan kayu manis.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnF9LzbkT1GIyU91U6907PNv7TuxF8YlzKABW-p4oau0NOYeBB3j9BGEIoYFDxCu1uv5izzaSjFXR4c2k01wd1Hh9tg_ryOfq8wLrsJ-SfUzHwWZxSxdA9kGvtOrEJSsTiN2oRW0IDi-mUvOGa9RrGFbG_SHZ7aPvjJoTo8XJbSNEGP6wWXSYgiGg-xNtVpBub6xFIKUT_OtTJwmxBpCXRo9wziXWdC4FQAibvTgUX0JSBNMH-DgOu3Qfbb0g0XXviX31pS2bBd0M" alt="Western Brew">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Western Brew</h4>
+                        <span class="font-label-sm text-primary font-bold">38K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Kopi hitam pekat dengan metode manual brew untuk ekstraksi aroma maksimal.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop" alt="Espresso Macchiato">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Espresso Macchiato</h4>
+                        <span class="font-label-sm text-primary font-bold">30K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Double espresso dengan sedikit busa susu hangat di atasnya.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600&auto=format&fit=crop" alt="Cold Brew Amber">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Cold Brew Amber</h4>
+                        <span class="font-label-sm text-primary font-bold">40K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Kopi seduh dingin selama 12 jam dengan aroma buah citrus segar.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=600&auto=format&fit=crop" alt="Caramel Macchiato">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Caramel Macchiato</h4>
+                        <span class="font-label-sm text-primary font-bold">45K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Espresso berlapis susu hangat, sirup vanilla, dan siraman saus karamel manis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Non-Coffee Content -->
+    <div id="category-non-coffee" class="tab-content grid gap-8 md:grid-cols-2 hidden">
+        <!-- Item 1 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=600&auto=format&fit=crop" alt="Matcha Sunset">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Matcha Sunset</h4>
+                        <span class="font-label-sm text-primary font-bold">45K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Matcha premium Jepang dengan susu segar dan sirup karamel buatan sendiri.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=600&auto=format&fit=crop" alt="Earl Grey Lavender">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Earl Grey Lavender</h4>
+                        <span class="font-label-sm text-primary font-bold">35K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Teh Earl Grey aromatis dengan infus bunga lavender dan madu murni.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1610632380989-680fe40816c6?q=80&w=600&auto=format&fit=crop" alt="Red Velvet Delight">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Red Velvet Delight</h4>
+                        <span class="font-label-sm text-primary font-bold">42K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Minuman red velvet lembut berlapis krim keju tipis di atasnya.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=600&auto=format&fit=crop" alt="Iced Lemon Peach Tea">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Iced Lemon Peach Tea</h4>
+                        <span class="font-label-sm text-primary font-bold">32K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Teh hitam segar dingin berpadu sirup persik dan potongan lemon segar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pastries Content -->
+    <div id="category-pastries" class="tab-content grid gap-8 md:grid-cols-2 hidden">
+        <!-- Item 1 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY9dNYTX8w4_V5pKVzaSCYH82IDg_w4RdqYuHMSesa8lA3Bk78v-Kk8CyyYS05vHVUOO9hSyAMplcY3xICfQVRd_jYgPcqyoI5JAx51gjf_CoIZuG_V0I2q5XTlPuh6zC3K0W6H96WQdPq5mQcaO1PSymGyjJ17SmS5VRtAG3xubUcm6dR5in-KSvcyqBTII9EfAuWgqIwD5YX0K9PqXzU67_xzBVUP2UrRW2n3D8lo4gshPL9IjJwluQo1NSdK7LbYEK6QjaZIqY" alt="Golden Croissant">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Golden Croissant</h4>
+                        <span class="font-label-sm text-primary font-bold">35K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Pastry mentega berlapis, renyah di luar dan lembut di dalam.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600&auto=format&fit=crop" alt="Cinnamon Roll">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Cinnamon Roll</h4>
+                        <span class="font-label-sm text-primary font-bold">38K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Roti gulung kayu manis hangat dengan lelehan cream cheese glaze.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=600&auto=format&fit=crop" alt="Almond Pain au Chocolat">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Almond Pain au Chocolat</h4>
+                        <span class="font-label-sm text-primary font-bold">40K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Pastry cokelat premium dengan taburan kacang almond panggang.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=600&auto=format&fit=crop" alt="Butter Waffle with Honey">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Butter Waffle</h4>
+                        <span class="font-label-sm text-primary font-bold">30K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Waffle hangat panggang segar disajikan dengan madu murni dan mentega gurih.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Meals Content -->
+    <div id="category-meals" class="tab-content grid gap-8 md:grid-cols-2 hidden">
+        <!-- Item 1 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=300&q=80" alt="Nasi Goreng Senja">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Nasi Goreng Senja</h4>
+                        <span class="font-label-sm text-primary font-bold">48K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Nasi goreng khas rempah pilihan dengan ayam panggang, telur mata sapi, dan kerupuk gurih.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500" alt="Spaghetti Bolognese">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Spaghetti Bolognese</h4>
+                        <span class="font-label-sm text-primary font-bold">52K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Spaghetti al dente dengan saus bolognese daging sapi cincang kaya rasa dan taburan keju parmesan.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex gap-4 p-4 border border-outline-variant bg-white hover:shadow-md transition-shadow duration-300 rounded-xl">
+            <div class="w-24 h-24 flex-shrink-0 overflow-hidden rounded-lg">
+                <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=300&q=80" alt="Chicken Katsu Curry">
+            </div>
+            <div class="flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-baseline">
+                        <h4 class="font-semibold text-lg">Chicken Katsu Curry</h4>
+                        <span class="font-label-sm text-primary font-bold">55K</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mt-1">Chicken katsu renyah disajikan dengan saus kari Jepang kental beraroma rempah dan nasi putih hangat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer (Dark Background as in Image) -->
+<footer class="bg-[#1c1816] text-white/70 py-16 px-margin-mobile border-t border-white/10 pb-32">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+            <span class="font-headline-md text-xl tracking-tight text-white">Evening Glow</span>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-6 text-sm">
+            <a href="index.html" class="hover:text-white transition-colors">Beranda</a>
+            <a href="menu.html" class="hover:text-white transition-colors">Menu</a>
+            <a href="gallery.html" class="hover:text-white transition-colors">Galeri</a>
+            <a href="contact.html" class="hover:text-white transition-colors">Kontak</a>
+        </nav>
+        <p class="text-xs text-white/40">
+            © 2024 EVENING GLOW CAFE. ALL RIGHTS RESERVED.
+        </p>
+    </div>
+</footer>
+
+<!-- BottomNavBar (Dark Theme Styling) -->
+<nav class="fixed bottom-0 w-full z-50 bg-[#1c1816] border-t border-white/10 flex justify-around items-center px-4 py-3 pb-safe shadow-2xl">
+    <a href="index.html" class="flex flex-col items-center justify-center text-white/70 hover:text-white px-4 py-1 transition-colors duration-300">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-label-sm text-[10px]">Home</span>
+    </a>
+    <a href="menu.html" class="flex flex-col items-center justify-center bg-primary text-white rounded-full px-4 py-1.5 scale-95 transition-transform duration-200">
+        <span class="material-symbols-outlined">coffee</span>
+        <span class="font-label-sm text-[10px]">Menu</span>
+    </a>
+    <a href="gallery.html" class="flex flex-col items-center justify-center text-white/70 hover:text-white px-4 py-1 transition-colors duration-300">
+        <span class="material-symbols-outlined">image</span>
+        <span class="font-label-sm text-[10px]">Gallery</span>
+    </a>
+    <a href="contact.html" class="flex flex-col items-center justify-center text-white/70 hover:text-white px-4 py-1 transition-colors duration-300">
+        <span class="material-symbols-outlined">location_on</span>
+        <span class="font-label-sm text-[10px]">Find Us</span>
+    </a>
+</nav>
+
+<!-- Navigation Drawer (Sidebar) -->
+<div id="drawer-overlay" class="fixed inset-0 bg-black/60 z-[100] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+<div id="menu-drawer" class="fixed top-0 left-0 h-full w-[280px] bg-[#1c1816] text-white z-[101] shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col border-r border-white/10">
+    <div class="p-6 border-b border-white/10 flex justify-between items-center bg-black/20">
+        <h3 class="font-headline-md text-xl text-primary tracking-tight">Evening Glow</h3>
+        <button id="close-drawer-btn" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-white">close</span>
+        </button>
+    </div>
+    <div class="flex-grow p-6 flex flex-col justify-between">
+        <nav class="space-y-6">
+            <a href="index.html" class="flex items-center gap-4 text-lg font-medium text-white/80 hover:text-primary transition-colors py-2">
+                <span class="material-symbols-outlined">home</span> Beranda
+            </a>
+            <a href="menu.html" class="flex items-center gap-4 text-lg font-medium text-primary py-2">
+                <span class="material-symbols-outlined">coffee</span> Menu Utama
+            </a>
+            <a href="gallery.html" class="flex items-center gap-4 text-lg font-medium text-white/80 hover:text-primary transition-colors py-2">
+                <span class="material-symbols-outlined">image</span> Galeri Suasana
+            </a>
+            <a href="contact.html" class="flex items-center gap-4 text-lg font-medium text-white/80 hover:text-primary transition-colors py-2">
+                <span class="material-symbols-outlined">location_on</span> Lokasi & Jam
+            </a>
+        </nav>
+        <div class="border-t border-white/10 pt-6">
+            <a href="menu.html" class="w-full bg-primary text-white py-3 rounded-xl font-medium shadow-lg hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">menu_book</span> Daftar Menu
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Navigation Drawer Controls
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const menuDrawer = document.getElementById('menu-drawer');
+    const menuBtn = document.getElementById('menu-btn');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+
+    function openDrawer() {
+        drawerOverlay.classList.remove('hidden');
+        setTimeout(() => {
+            drawerOverlay.classList.remove('opacity-0');
+            menuDrawer.classList.remove('-translate-x-full');
+        }, 10);
+    }
+
+    function closeDrawer() {
+        drawerOverlay.classList.add('opacity-0');
+        menuDrawer.classList.add('-translate-x-full');
+        setTimeout(() => {
+            drawerOverlay.classList.add('hidden');
+        }, 300);
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+    // Tab Switching Logic
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+
+            tabBtns.forEach(b => {
+                b.classList.remove('border-primary', 'text-primary');
+                b.classList.add('border-transparent', 'text-on-surface-variant');
+            });
+            btn.classList.add('border-primary', 'text-primary');
+            btn.classList.remove('border-transparent', 'text-on-surface-variant');
+
+            tabContents.forEach(content => {
+                if (content.id === `category-${targetTab}`) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+        });
+    });
+</script>
+</body></html>

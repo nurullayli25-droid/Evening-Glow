@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Galeri | Evening Glow Cafe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Space+Mono:wght@400;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#ff4d1c",            /* Vibrant Orange */
+                    "secondary": "#145348",          /* Dark Teal */
+                    "background": "#fbf9f4",         /* Creamy background */
+                    "on-background": "#1c1816",      /* Charcoal dark text */
+                    "surface": "#fbf9f4",
+                    "surface-container-low": "#f3f0e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1c1816",
+                    "on-surface-variant": "#59524e",
+                    "outline": "#dbc4b6",
+                    "outline-variant": "#e6dcd3",
+                    "primary-fixed": "#ffe4dc",
+                    "secondary-fixed": "#d0e6e2",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "2xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "section-gap": "120px",
+                    "margin-mobile": "20px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Space Mono"],
+                    "headline-md": ["Libre Caslon Text"],
+                    "body-md": ["Work Sans"],
+                    "display-lg": ["Libre Caslon Text"],
+                    "body-lg": ["Work Sans"],
+                    "display-lg-mobile": ["Libre Caslon Text"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar / Header (Dark Background as in Image) -->
+<header class="flex justify-between items-center px-margin-mobile md:px-16 py-4 w-full z-50 bg-[#1c1816] text-white border-b border-on-background/20 sticky top-0">
+    <div class="flex items-center gap-3">
+        <button id="menu-btn" class="flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition-colors focus:outline-none" aria-label="Buka Menu">
+            <span class="material-symbols-outlined text-primary text-2xl">menu</span>
+        </button>
+        <span class="font-headline-md text-xl tracking-tight text-white flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-primary inline-block"></span> Evening Glow
+        </span>
+    </div>
+    <!-- Desktop Nav Links -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="hover:text-primary transition-colors">Beranda</a>
+        <a href="menu.html" class="hover:text-primary transition-colors">Menu Utama</a>
+        <a href="gallery.html" class="text-primary">Galeri Suasana</a>
+        <a href="contact.html" class="hover:text-primary transition-colors">Lokasi & Kontak</a>
+    </nav>
+    <div class="flex items-center gap-4">
+        <a href="contact.html" class="hidden md:inline-block bg-primary text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-primary/90 transition-all shadow-md">Pesan Sekarang</a>
+        <span class="material-symbols-outlined text-primary text-2xl cursor-pointer">shopping_bag</span>
+    </div>
+</header>
+
+<main class="py-12 px-margin-mobile max-w-5xl mx-auto pb-32">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+        <span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Galeri</span>
+        <h2 class="font-headline-md text-3xl text-on-surface mt-2">Cahaya Senja Kami</h2>
+        <p class="font-body-md text-on-surface-variant max-w-md mx-auto mt-2 text-sm">Visualisasi sudut tenang dan seduhan hangat kami.</p>
+    </div>
+
+    <!-- Bento Grid Gallery -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Photo 1 (Big aspect) -->
+        <div class="md:col-span-2 md:row-span-2 aspect-video md:aspect-auto md:h-[480px] border border-outline-variant overflow-hidden cursor-pointer group relative rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <img class="w-full h-full object-cover grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3LggR2h9c7TJuTPqo3rTBJjsp-qMY4VSsLF4M1yUJk8IgIOKtLig7bxr_ENRDb6Iza7EHiYsSPMwrK3jn1VGwCl4Zqz8lbc7MEHWPE6MNPlE3WJeEgjwkDh-mOK602Apygg1tDCYbBV_s7REoLr1j-RPRVOJzA90v6TzKhPIq7MlDiUEt1MxpTjtokF7slGWzNYmc0D2tsys2nJy_yPjLi_XLUJPGuOxfds9qP7HlGEbZFJ5DdFBFH7b_oIRL3v_qBfzObXRwD14" 
+                 alt="Interior Cafe yang hangat dan klasik">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p class="text-xs text-white">Sudut Duduk Klasik</p>
+            </div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="aspect-square border border-outline-variant overflow-hidden cursor-pointer group relative rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <img class="w-full h-full object-cover grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcN33RYONdZk_wWJRDhxSnrvVnO_5zGTkMOwbQYMesYwfSiOxMVEGafqFWnAaWPhFgQ1GO8TZv6H_xTMQAnxDNuzM0aZ_132VHEnf8EHVj1ftHXkZP4L5YqzoV0MwdZsE2S_xsO5sbDtS9jl5ou8ykri_u71OKtv9FLK1MFIkQKfEZDJL77U2jJhk7CnyKGnHscbfGXKwEayJuysr30vfM0cti14qGeLuTR_wN5x8Vw4IZZZKxNVN1rn9eCREpEI3v8x_9PW4g8LU" 
+                 alt="Mesin Espresso Vintage">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p class="text-xs text-white">Mesin Espresso Vintage</p>
+            </div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="aspect-square border border-outline-variant overflow-hidden cursor-pointer group relative rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <img class="w-full h-full object-cover grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzrBGc5Sn5iVPM54Ejp12Ckh66XqJXmH7fXBuOWBhn_RzLZHdxWjDHVxkrcytUcZ8rLg4jyBo3dNiYiLg5D2e2R2vBjpGehDk9-mBm0hEbhnWnWWVwGGoqMKJ7AR8jkNmJqeqkNUIDuZiG1dnHH7mVg13lRGi2Tap-_wabCqDmaNvF-WrEAtuh71MBpZ6L9fFI8n3U32EwdubxiT-tdwlrBbwpKjg_Y6It5uveb1obss9ot31L8JOA5hUx-eO6MENqFNhkQsKAPpo" 
+                 alt="Sudut Membaca Tenang">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p class="text-xs text-white">Sudut Membaca</p>
+            </div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="aspect-square border border-outline-variant overflow-hidden cursor-pointer group relative rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <img class="w-full h-full object-cover grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZgnYicAfCNt1MeXbNHudWUEHYvfQ2VAJmeCLo5N1Uw1QMvfKKhlZV0a07GezN_bEQBRsi8zuY0dYGMXtut8qQ-LiuHpP42ndqryW1uwIgGxb7EneIH_cIIaZmdDepIggyJvstynNtNgR3S2NwE-bDH1S-l7ABZmjouONejaueNh6nA3T--jFMPCwyUlW0gXr0KMsXeWU8b6N4gYbHZhnpwbDaGwdnJZyyofpcSKhhw4re-P4gxmb07ieHm8OMIBK3ORllVBgyRY0" 
+                 alt="Kopi & Pemandangan Senja">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p class="text-xs text-white">Sore di Evening Glow</p>
+            </div>
+        </div>
+
+        <!-- Photo 5 -->
+        <div class="aspect-square border border-outline-variant overflow-hidden cursor-pointer group relative rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <img class="w-full h-full object-cover grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9MLMu3BPOGCgiJfRd6snGK88muVaSfkfIurgbLxLdWTRPv7bMArk9aBp3vtKaQG6UztQuhTe7NxOAC_Y1D0YHBxQC47eSN_RViBvOIiKv30P6N6ZGU1uhalLl4o-y7KAjLwtsYr40a-_SbgmNlV58nIkvmKA6UCbaKMWNv6GGcIqu-lcWgf48BHxC1IBHGOnF92vyQ463tF03KTYkM6CSfEBed_BX_OHqbz_h_8PGUF7j8v9k4LZsicCIVutf5dTDhhpRnuh5aTY" 
+                 alt="Rustic Latte Art">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p class="text-xs text-white">Seni Latte Art Khas</p>
+            </div>
+        </div>
+
+        <!-- Photo 6 -->
+        <div class="aspect-square border border-outline-variant overflow-hidden cursor-pointer group relative rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <img class="w-full h-full object-cover grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-500 transform group-hover:scale-105" 
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnF9LzbkT1GIyU91U6907PNv7TuxF8YlzKABW-p4oau0NOYeBB3j9BGEIoYFDxCu1uv5izzaSjFXR4c2k01wd1Hh9tg_ryOfq8wLrsJ-SfUzHwWZxSxdA9kGvtOrEJSsTiN2oRW0IDi-mUvOGa9RrGFbG_SHZ7aPvjJoTo8XJbSNEGP6wWXSYgiGg-xNtVpBub6xFIKUT_OtTJwmxBpCXRo9wziXWdC4FQAibvTgUX0JSBNMH-DgOu3Qfbb0g0XXviX31pS2bBd0M" 
+                 alt="Penyeduhan Manual Kopi">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p class="text-xs text-white">Seduhan Manual</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 bg-black/95 z-[200] hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0">
+    <button id="close-lightbox" class="absolute top-6 right-6 text-white hover:text-primary transition-colors p-2 z-50">
+        <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+    <button id="prev-btn" class="absolute left-4 text-white hover:text-primary transition-colors p-2 z-50">
+        <span class="material-symbols-outlined text-5xl">chevron_left</span>
+    </button>
+    <img id="lightbox-img" class="max-w-full max-h-[85vh] object-contain rounded shadow-2xl transition-transform duration-300 scale-95" src="" alt="Lightbox View">
+    <button id="next-btn" class="absolute right-4 text-white hover:text-primary transition-colors p-2 z-50">
+        <span class="material-symbols-outlined text-5xl">chevron_right</span>
+    </button>
+</div>
+
+<!-- Footer (Dark Background as in Image) -->
+<footer class="bg-[#1c1816] text-white/70 py-16 px-margin-mobile border-t border-white/10 pb-32">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+            <span class="font-headline-md text-xl tracking-tight text-white">Evening Glow</span>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-6 text-sm">
+            <a href="index.html" class="hover:text-white transition-colors">Beranda</a>
+            <a href="menu.html" class="hover:text-white transition-colors">Menu</a>
+            <a href="gallery.html" class="hover:text-white transition-colors">Galeri</a>
+            <a href="contact.html" class="hover:text-white transition-colors">Kontak</a>
+        </nav>
+        <p class="text-xs text-white/40">
+            © 2024 EVENING GLOW CAFE. ALL RIGHTS RESERVED.
+        </p>
+    </div>
+</footer>
+
+<!-- BottomNavBar (Dark Theme Styling) -->
+<nav class="fixed bottom-0 w-full z-50 bg-[#1c1816] border-t border-white/10 flex justify-around items-center px-4 py-3 pb-safe shadow-2xl">
+    <a href="index.html" class="flex flex-col items-center justify-center text-white/70 hover:text-white px-4 py-1 transition-colors duration-300">
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-label-sm text-[10px]">Home</span>
+    </a>
+    <a href="menu.html" class="flex flex-col items-center justify-center text-white/70 hover:text-white px-4 py-1 transition-colors duration-300">
+        <span class="material-symbols-outlined">coffee</span>
+        <span class="font-label-sm text-[10px]">Menu</span>
+    </a>
+    <a href="gallery.html" class="flex flex-col items-center justify-center bg-primary text-white rounded-full px-4 py-1.5 scale-95 transition-transform duration-200">
+        <span class="material-symbols-outlined">image</span>
+        <span class="font-label-sm text-[10px]">Gallery</span>
+    </a>
+    <a href="contact.html" class="flex flex-col items-center justify-center text-white/70 hover:text-white px-4 py-1 transition-colors duration-300">
+        <span class="material-symbols-outlined">location_on</span>
+        <span class="font-label-sm text-[10px]">Find Us</span>
+    </a>
+</nav>
+
+<!-- Navigation Drawer (Sidebar) -->
+<div id="drawer-overlay" class="fixed inset-0 bg-black/60 z-[100] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+<div id="menu-drawer" class="fixed top-0 left-0 h-full w-[280px] bg-[#1c1816] text-white z-[101] shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col border-r border-white/10">
+    <div class="p-6 border-b border-white/10 flex justify-between items-center bg-black/20">
+        <h3 class="font-headline-md text-xl text-primary tracking-tight">Evening Glow</h3>
+        <button id="close-drawer-btn" class="p-2 rounded-full hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-white">close</span>
+        </button>
+    </div>
+    <div class="flex-grow p-6 flex flex-col justify-between">
+        <nav class="space-y-6">
+            <a href="index.html" class="flex items-center gap-4 text-lg font-medium text-white/80 hover:text-primary transition-colors py-2">
+                <span class="material-symbols-outlined">home</span> Beranda
+            </a>
+            <a href="menu.html" class="flex items-center gap-4 text-lg font-medium text-white/80 hover:text-primary transition-colors py-2">
+                <span class="material-symbols-outlined">coffee</span> Menu Utama
+            </a>
+            <a href="gallery.html" class="flex items-center gap-4 text-lg font-medium text-primary py-2">
+                <span class="material-symbols-outlined">image</span> Galeri Suasana
+            </a>
+            <a href="contact.html" class="flex items-center gap-4 text-lg font-medium text-white/80 hover:text-primary transition-colors py-2">
+                <span class="material-symbols-outlined">location_on</span> Lokasi & Jam
+            </a>
+        </nav>
+        <div class="border-t border-white/10 pt-6">
+            <a href="menu.html" class="w-full bg-primary text-white py-3 rounded-xl font-medium shadow-lg hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">menu_book</span> Daftar Menu
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Navigation Drawer Controls
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const menuDrawer = document.getElementById('menu-drawer');
+    const menuBtn = document.getElementById('menu-btn');
+    const closeDrawerBtn = document.getElementById('close-drawer-btn');
+
+    function openDrawer() {
+        drawerOverlay.classList.remove('hidden');
+        setTimeout(() => {
+            drawerOverlay.classList.remove('opacity-0');
+            menuDrawer.classList.remove('-translate-x-full');
+        }, 10);
+    }
+
+    function closeDrawer() {
+        drawerOverlay.classList.add('opacity-0');
+        menuDrawer.classList.add('-translate-x-full');
+        setTimeout(() => {
+            drawerOverlay.classList.add('hidden');
+        }, 300);
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openDrawer);
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+
+    // Lightbox Controls
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightbox = document.getElementById('close-lightbox');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    const galleryImgs = Array.from(document.querySelectorAll('main div img'));
+    let activeIdx = 0;
+
+    function openLightbox(idx) {
+        activeIdx = idx;
+        lightboxImg.src = galleryImgs[activeIdx].src;
+        lightboxImg.alt = galleryImgs[activeIdx].alt;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        setTimeout(() => {
+            lightbox.classList.remove('opacity-0');
+            lightboxImg.classList.remove('scale-95');
+        }, 10);
+    }
+
+    function closeLightboxView() {
+        lightbox.classList.add('opacity-0');
+        lightboxImg.classList.add('scale-95');
+        setTimeout(() => {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }, 300);
+    }
+
+    function nextImage() {
+        activeIdx = (activeIdx + 1) % galleryImgs.length;
+        lightboxImg.src = galleryImgs[activeIdx].src;
+        lightboxImg.alt = galleryImgs[activeIdx].alt;
+    }
+
+    function prevImage() {
+        activeIdx = (activeIdx - 1 + galleryImgs.length) % galleryImgs.length;
+        lightboxImg.src = galleryImgs[activeIdx].src;
+        lightboxImg.alt = galleryImgs[activeIdx].alt;
+    }
+
+    galleryImgs.forEach((img, index) => {
+        img.parentElement.addEventListener('click', () => openLightbox(index));
+    });
+
+    closeLightbox.addEventListener('click', closeLightboxView);
+    nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', prevImage);
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightboxView();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('hidden')) {
+            if (e.key === 'Escape') closeLightboxView();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        }
+    });
+</script>
+</body></html>
